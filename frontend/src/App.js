@@ -1,10 +1,10 @@
 import React from 'react';
-
+import Logon from './pages/Logon/index';
+import './global.css';
 
 function App() {
   return (
-    <h1>Hello</h1>
-    
+    <Logon></Logon>
   );
 }
 

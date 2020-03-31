@@ -1,24 +1,24 @@
-const express = require('express');
-const OngController = require('./controllers/OngController')
-const IncidentController = require('./controllers/IncidentController')
-const ProfileController = require('./controllers/ProfileController')
-const SessionController = require('./controllers/SessionController')
-const routes = express.Router();
+import  Router  from 'express';
+import { index as _indexOng, create as _createOng } from './controllers/OngController';
+import { indexs as _indexIncident, creat as _createIncident, del as _deleteIncident } from './controllers/IncidentController';
+import { index as _indexProfile } from './controllers/ProfileController';
+import { create as _create } from './controllers/SessionController';
+const routes = Router();
 
 //login
-routes.post('/sessions', SessionController.create)
+routes.post('/sessions', _create);
 
 
 //Profile
-routes.get('/profile', ProfileController.index)
+routes.get('/profile', _indexProfile);
 
 //Ongs
-routes.get('/ongs', OngController.index)
-routes.post('/ongs', OngController.create);
+routes.get('/ongs', _indexOng);
+routes.post('/ongs', _createOng);
 
 //Incidents
-routes.get('/incidents', IncidentController.index);
-routes.post('/incidents', IncidentController.create);
-routes.delete('/incidents/:id', IncidentController.delete);
+routes.get('/incidents', _indexIncident);
+routes.post('/incidents', _createIncident);
+routes.del('/incidents/:id', _deleteIncident);
 
-module.exports = routes;
+export default routes;

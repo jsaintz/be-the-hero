@@ -1,5 +1,5 @@
-const connection  =  require('../database/connection')
-const crypto = require('crypto');
+import crypto from 'crypto';
+import connection from '../database/connection';
 
 module.exports = {
     async index(request, response){

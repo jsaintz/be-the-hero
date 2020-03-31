@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/database/connection.js"],"names":["connection","development"],"mappings":";;;;;;AAAA;;;;AACA;;;;AAEA,IAAMA,aAAa,oBAAKC,qBAAL,CAAnB;;kBAEeD,U","file":"connection.js","sourcesContent":["import knex from 'knex';\r\nimport { development } from '../../knexfile';\r\n\r\nconst connection = knex(development);\r\n\r\nexport default connection;\r\n"]}
